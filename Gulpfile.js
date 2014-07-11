@@ -1,15 +1,15 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
+var gulp         = require('gulp'),
+    sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    clean = require('gulp-rimraf'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    livereload = require('gulp-livereload');
+    minifycss    = require('gulp-minify-css'),
+    uglify       = require('gulp-uglify'),
+    imagemin     = require('gulp-imagemin'),
+    rename       = require('gulp-rename'),
+    clean        = require('gulp-rimraf'),
+    concat       = require('gulp-concat'),
+    notify       = require('gulp-notify'),
+    cache        = require('gulp-cache'),
+    livereload   = require('gulp-livereload');
 
 //styles
 gulp.task('styles', function(){
