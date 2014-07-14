@@ -1,2 +1,8 @@
 //main sass file
 @import "modules/all";
+
+.some {
+    background: red;
+    border-radius: 10px;
+    animation: foo 1s;
+}

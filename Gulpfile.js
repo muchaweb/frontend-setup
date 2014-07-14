@@ -9,13 +9,23 @@ var gulp         = require('gulp'),
     concat       = require('gulp-concat'),
     notify       = require('gulp-notify'),
     cache        = require('gulp-cache'),
+    gutil        = require('gulp-util'),
+    plumber      = require('gulp-plumber'),
     livereload   = require('gulp-livereload');
+
+var onError = function (err) {
+  gutil.beep();
+  console.log(err);
+};
 
 //styles
 gulp.task('styles', function(){
     return gulp.src('./src/styles/*.scss')
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(sass())
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(autoprefixer('last 15 version'))
     .pipe(gulp.dest('./dist/styles'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
